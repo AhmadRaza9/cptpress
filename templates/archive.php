@@ -21,87 +21,83 @@ while (have_posts()):
 
     ?>
 
-				<article id="atat-<?php echo get_the_ID(); ?>" class="atat-article atat-archive">
-						<div class="atat-header">
-				            <?php if (has_post_thumbnail()): ?>
-				            <div class="atat-image">
-	<?php if ($_SERVER['REQUEST_URI'] === '/portfolio/'): ?>
-	<span class="atat-cat">
-	<?php
-    if (!empty($cptpress_portfolio_cat)) {
-        foreach ($cptpress_portfolio_cat as $key => $value) {
+						<article id="atat-<?php echo get_the_ID(); ?>" class="atat-article atat-archive">
+								<div class="atat-header">
+						            <?php if (has_post_thumbnail()): ?>
+						            <div class="atat-image">
+			<?php if ($_SERVER['REQUEST_URI'] === '/portfolio/'): ?>
+			    <?php if (!empty($cptpress_portfolio_cat)): ?>
+			    <span class="atat-cat">
+			<?php
+    foreach ($cptpress_portfolio_cat as $key => $value) {
 
-            $cptpress_portfolio_link = get_term_link($value->slug, 'portfolio-category');
-            echo "<a href='$cptpress_portfolio_link'>";
-            echo $value->name;
-            echo ", ";
-            echo "</a>";
-        }
-
-    }
-
-    ?>
-	</span>
-	<?php endif;?>
-
-<?php if ($_SERVER['REQUEST_URI'] === '/team/'): ?>
-<span class="atat-cat">
-<?php
-if (!empty($cptpress_profession)) {
-    foreach ($cptpress_profession as $key => $value) {
-
-        $cptpress_profession_link = get_term_link($value->slug, 'profession');
-        echo "<a href='$cptpress_profession_link'>";
+        $cptpress_portfolio_link = get_term_link($value->slug, 'portfolio-category');
+        echo "<a href='$cptpress_portfolio_link'>";
         echo $value->name;
         echo ", ";
         echo "</a>";
-
     }
+    ?>
+			</span>
+			    <?php endif;?>
+
+<?php endif;?>
+
+<?php if ($_SERVER['REQUEST_URI'] === '/team/'): ?>
+<?php if (!empty($cptpress_profession)): ?>
+<span class="atat-cat">
+<?php
+foreach ($cptpress_profession as $key => $value) {
+
+    $cptpress_profession_link = get_term_link($value->slug, 'profession');
+    echo "<a href='$cptpress_profession_link'>";
+    echo $value->name;
+    echo ", ";
+    echo "</a>";
 
 }
-
 ?>
 </span>
+<?php endif;?>
+
 <?php endif;?>
 
 <?php if ($_SERVER['REQUEST_URI'] === '/case-studies/'): ?>
-<span class="atat-cat">
+    <?php if (!empty($cptpress_cs_cat)): ?>
+    <span class="atat-cat">
 <?php
-if (!empty($cptpress_cs_cat)) {
-    foreach ($cptpress_cs_cat as $key => $value) {
+foreach ($cptpress_cs_cat as $key => $value) {
 
-        $cptpress_cs_cat_link = get_term_link($value->slug, 'case-study-category');
-        echo "<a href='$cptpress_cs_cat_link'>";
-        echo $value->name;
-        echo ", ";
-        echo "</a>";
-
-    }
+    $cptpress_cs_cat_link = get_term_link($value->slug, 'case-study-category');
+    echo "<a href='$cptpress_cs_cat_link'>";
+    echo $value->name;
+    echo ", ";
+    echo "</a>";
 
 }
-
 ?>
 </span>
+    <?php endif;?>
+
 <?php endif;?>
 
-                <?php if ($_SERVER['REQUEST_URI'] === '/client/'): ?>
-<span class="atat-cat">
+<?php if ($_SERVER['REQUEST_URI'] === '/client/'): ?>
+<?php if(!empty($cptpress_cl_cat)): ?>
+    <span class="atat-cat">
 <?php
-if (!empty($cptpress_cl_cat)) {
-    foreach ($cptpress_cl_cat as $key => $value) {
+foreach ($cptpress_cl_cat as $key => $value) {
 
-        $cptpress_cl_cat_link = get_term_link($value->slug, 'client-category');
-        echo "<a href='$cptpress_cl_cat_link'>";
-        echo $value->name;
-        echo ", ";
-        echo "</a>";
-
-    }
+    $cptpress_cl_cat_link = get_term_link($value->slug, 'client-category');
+    echo "<a href='$cptpress_cl_cat_link'>";
+    echo $value->name;
+    echo ", ";
+    echo "</a>";
 
 }
-
 ?>
 </span>
+
+<?php endif;?>
 <?php endif;?>
 
 	                <a href="<?php the_permalink();?>" class="atat-img-link">
@@ -122,10 +118,7 @@ if (!empty($cptpress_cl_cat)) {
             <?php endif;?>
 </article> <!-- #post-<?php the_ID();?> -->
 
-<?php
-
-endwhile;
-?>
+<?php endwhile;?>
 
 </div>
 
