@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name: CPT Press
  * Plugin URI:  https://github.com/Ahmadraza9/cptpress
- * Description: Basic Custom Post Types. Custom Post Types include  Team, Clients, Portfolios, Case Study.
+ * Description: Basic Custom Post Types. Custom Post Types includes  Team, Portfolio, Case Study, Clients, FAQs. You can register and unregister CPTs.
  * Version: 1.0.1
  * Author: Ahmad Raza
  * Author URI: http://ahmedraza.dev/
@@ -47,7 +47,7 @@ function cptpress_field_team_cpt($args)
 <label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('Team', 'cptpress');?></label><br>
 
 	<p class="description">
-		<?php esc_html_e('Check box to create team CPT', 'cptpress');?>
+		<?php esc_html_e('Check the box to create Team CPT', 'cptpress');?>
 	</p>
 <?php
 
@@ -66,7 +66,7 @@ function cptpress_field_portfolio_cpt($args)
 <label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('Portfolio', 'cptpress');?></label><br>
 
 	<p class="description">
-		<?php esc_html_e('Check box to create team Portfolio CPT', 'cptpress');?>
+		<?php esc_html_e('Check the box to create Portfolio CPT', 'cptpress');?>
 	</p>
 <?php
 
@@ -85,7 +85,7 @@ function cptpress_field_case_study_cpt($args)
 <label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('Case Study', 'cptpress');?></label><br>
 
 	<p class="description">
-		<?php esc_html_e('Check box to create team Case Study CPT', 'cptpress');?>
+		<?php esc_html_e('Check the box to create Case Study CPT', 'cptpress');?>
 	</p>
 <?php
 
@@ -104,7 +104,7 @@ function cptpress_field_client_cpt($args)
 <label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('Client', 'cptpress');?></label><br>
 
 	<p class="description">
-		<?php esc_html_e('Check box to create team Client CPT', 'cptpress');?>
+		<?php esc_html_e('Check the box to create Client CPT', 'cptpress');?>
 	</p>
 <?php
 
@@ -120,10 +120,10 @@ function cptpress_field_faqs_cpt($args)
         id="<?php echo esc_attr($args['label_for']); ?>"
         name="cptpress_options_faqs[<?php echo esc_attr($args['label_for']); ?>]"
         value="faqs" <?php echo (isset($options[$args['label_for']]) === true ? 'checked' : ''); ?>>
-<label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('FAQS', 'cptpress');?></label><br>
+<label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('FAQs', 'cptpress');?></label><br>
 
 	<p class="description">
-		<?php esc_html_e('Check box to create team FAQS CPT', 'cptpress');?>
+		<?php esc_html_e('Check the box to create FAQs CPT', 'cptpress');?>
 	</p>
 <?php
 
@@ -189,7 +189,7 @@ function cptpress_settings_init()
 
     add_settings_field(
         'cptpress_field_client_cpt',
-        __('Register Case Study CPT', 'cptpress'),
+        __('Register Client CPT', 'cptpress'),
         'cptpress_field_client_cpt',
         'cptpress',
         'cptpress_section_developers',

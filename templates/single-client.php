@@ -21,11 +21,15 @@ while (have_posts()):
 	    </div>
         <div class="atat-footer">
 <?php if(!empty($cptpress_profession)): ?>
-<span class="atat-cat"><strong>Professions:</strong>
+<span class="atat-cat"><strong>Category:</strong>
 <?php
 foreach ($cptpress_profession as $key => $value) {
+
+$cptpress_profession_cat_link = get_term_link($value->slug, 'client-category');
+echo "<a href='$cptpress_profession_cat_link'>";
 echo $value->name;
 echo ", ";
+echo "</a>";
 }
 ?>
 </span>

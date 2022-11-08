@@ -42,8 +42,12 @@ while (have_posts()):
                         <span class="atat-cat"><strong>Professions:</strong>
                 <?php
 foreach ($cptpress_profession as $key => $value) {
-    echo $value->name;
-    echo ", ";
+$cptpress_profession_cat_link = get_term_link($value->slug, 'profession');
+echo "<a href='$cptpress_profession_cat_link'>";
+echo $value->name;
+echo ", ";
+echo "</a>";
+
 }
 ?>
             </span>
