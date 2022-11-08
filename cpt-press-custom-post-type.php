@@ -1,37 +1,4 @@
 <?php
-/**
- * Basic Custom Post Types. Custom Post Types include Team, Clients,
- * Portfolios, Our Story and Testimonials.
- *
- * @package CPTpress
- *
- * @wordpress-plugin
- * Plugin Name: CPT Press
- * Plugin URI:  https://github.com/Ahmadraza9/cptpress
- * Description: Basic Custom Post Types. Custom Post Types include  Team, Clients, Portfolios, Case Study.
- * Version: 1.0.1
- * Author: Ahmad Raza
- * Author URI: http://ahmedraza.dev/
- * License: GPL2
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: cptpress
- */
-
-// If this file is called directly, abort.
-if (!defined('WPINC')) {
-    die;
-}
-
-define('CPT_PRESS_VERSION', '1.0.0');
-
-defined('CPT_PRESS_NAME') or define('CPT_PRESS_NAME', 'ataki-team');
-
-defined('CPT_PRESS_BASE_FILE') or define('CPT_PRESS_BASE_FILE', __FILE__);
-
-define('CPT_PRESS_BASE_DIR', plugin_dir_path(__FILE__));
-
-require 'class-cpt-press-portfolio-colors-metabox.php';
-require 'class-cpt-press-template-loader.php';
 
 function cptpress_enqueue_style()
 {
@@ -99,7 +66,10 @@ function cptpress_custom_posts_init()
         'show_in_rest' => false,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
     );
-    register_post_type('team', $post_type_team);
+    $team_option = get_option('cptpress_options_team');
+    if (!empty($team_option)) {
+        register_post_type('team', $post_type_team);
+    }
 
     /**
      * Register the "Profession" taxonomy.
@@ -185,7 +155,10 @@ function cptpress_custom_posts_init()
         'show_in_rest' => false,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
     );
-    register_post_type('portfolio', $post_type_portfolio);
+    $portfolio_option = get_option('cptpress_options_portfolio');
+    if (!empty($portfolio_option)) {
+        register_post_type('portfolio', $post_type_portfolio);
+    }
 
     /**
      * Register the "Portfolio Categories" custom post type.
@@ -275,7 +248,10 @@ function cptpress_custom_posts_init()
         'menu_position' => null,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
     );
-    register_post_type('case-studies', $post_type_case_study);
+    $case_study_option = get_option('cptpress_options_case_study');
+    if (!empty($case_study_option)) {
+        register_post_type('case-studies', $post_type_case_study);
+    }
 
     /**
      * Register the "Case Study Categories" custom post type.
@@ -364,7 +340,10 @@ function cptpress_custom_posts_init()
         'show_in_rest' => false,
         'supports' => array('title', 'thumbnail', 'excerpt', 'editor'),
     );
-    register_post_type('client', $post_type_client);
+    $clients_option = get_option('cptpress_options_clients');
+    if (!empty($clients_option)) {
+        register_post_type('client', $post_type_client);
+    }
 
     /**
      * Register the Client Category taxonomy.
@@ -558,7 +537,6 @@ function team_build_meta_box($post)
 
     // retrieve the _team_website current value.
     $current_website = get_post_meta($post->ID, '_team_website', true);
-
 
     // retrieve the _team_facebook current value.
     $current_facebook = get_post_meta($post->ID, '_team_facebook', true);
