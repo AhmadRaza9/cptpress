@@ -1,0 +1,73 @@
+.atat-single {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.atat-single img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.ata-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 25px;
+    justify-content: center;
+}
+
+.ata-cards .atat-article img {
+    width: 100%;
+    aspect-ratio: 2 / 2;
+    object-fit: cover;
+}
+
+
+.atat-page-main {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links .page-numbers {
+    background-color: #00000012;
+    color: #000;
+    padding: 2px 10px;
+    font-weight: 400;
+}
+.nav-links .page-numbers.current {
+    background: #000;
+    padding: 2px 10px;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.atat-image{
+    position: relative;
+}
+.atat-image .atat-cat {
+    position: absolute;
+    left: 10px;
+    background: #fff;
+    top: 10px;
+    border-radius: 35px;
+    padding: 5px 20px;
+}
+
+ul.atat-socials img {
+    width: 32px;
+    height: 32px;
+}
+
+ul.atat-socials {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
