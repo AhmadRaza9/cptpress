@@ -12,7 +12,7 @@ while (have_posts()):
     ?>
 
 
-	<article id="atat-<?php echo get_the_ID(); ?>" class="atat-single" style="background-color: <?php echo $cptpress_pc_primary_color; ?>">
+	<article id="atat-<?php echo get_the_ID(); ?>" class="atat-single" style="background-color: <?php if(!empty($cptpress_pc_primary_color)){echo $cptpress_pc_primary_color;} ?>">
 			<div class="atat-header">
 	            <?php if (has_post_thumbnail()): ?>
 	            <div class="atat-image">
@@ -21,6 +21,7 @@ while (have_posts()):
 	            <?php endif;?>
 	    </div>
         <div class="atat-footer">
+            <?php if(!empty($cptpress_portfolio_cat)): ?>
             <span class="atat-cat"><strong>Category:</strong>
                 <?php
                     foreach ($cptpress_portfolio_cat as $key => $value) {
@@ -29,6 +30,7 @@ while (have_posts()):
                     }
                     ?>
             </span>
+            <?php endif; ?>
             <h2 class="atat-title"><?php the_title();?></h2>
             <?php if (!empty(get_the_content())): ?>
             <?php the_content();?>

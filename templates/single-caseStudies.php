@@ -20,14 +20,16 @@ while (have_posts()):
 	            <?php endif;?>
 	    </div>
         <div class="atat-footer">
-                        <span class="atat-cat"><strong>Categories:</strong>
-                <?php
+<?php if(!empty($cptpress_cs_cat)): ?>
+<span class="atat-cat"><strong>Categories:</strong>
+<?php
 foreach ($cptpress_cs_cat as $key => $value) {
-    echo $value->name;
-    echo ", ";
+echo $value->name;
+echo ", ";
 }
 ?>
-            </span>
+</span>
+<?php endif; ?>
             <h2 class="atat-title"><?php the_title();?></h2>
             <?php if (!empty(get_the_content())): ?>
             <?php the_content();?>

@@ -38,7 +38,7 @@ while (have_posts()):
 			            <?php endif;?>
 	    </div>
         <div class="atat-footer">
-        <?php if ($cptpress_profession): ?>
+        <?php if (!empty($cptpress_profession)): ?>
                         <span class="atat-cat"><strong>Professions:</strong>
                 <?php
 foreach ($cptpress_profession as $key => $value) {
