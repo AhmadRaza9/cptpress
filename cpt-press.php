@@ -110,6 +110,25 @@ function cptpress_field_client_cpt($args)
 
 }
 
+function cptpress_field_faqs_cpt($args)
+{
+
+    $options = get_option('cptpress_options_faqs');
+    ?>
+
+<input type="checkbox" data-custom="<?php echo esc_attr($args['cptpress_custom_data']); ?>"
+        id="<?php echo esc_attr($args['label_for']); ?>"
+        name="cptpress_options_faqs[<?php echo esc_attr($args['label_for']); ?>]"
+        value="faqs" <?php echo (isset($options[$args['label_for']]) === true ? 'checked' : ''); ?>>
+<label for="<?php echo esc_attr($args['label_for']); ?>"><?php esc_html_e('FAQS', 'cptpress');?></label><br>
+
+	<p class="description">
+		<?php esc_html_e('Check box to create team FAQS CPT', 'cptpress');?>
+	</p>
+<?php
+
+}
+
 /**
  * custom option and settings
  */
@@ -120,6 +139,7 @@ function cptpress_settings_init()
     register_setting('cptpress', 'cptpress_options_portfolio');
     register_setting('cptpress', 'cptpress_options_case_study');
     register_setting('cptpress', 'cptpress_options_clients');
+    register_setting('cptpress', 'cptpress_options_faqs');
 
     // Register a new section in the page.
     add_settings_section(
@@ -179,6 +199,20 @@ function cptpress_settings_init()
             'cptpress_custom_data' => 'custom',
         )
     );
+
+    add_settings_field(
+    'cptpress_field_faqs_cpt',
+    __('Register FAQs CPT', 'cptpress'),
+    'cptpress_field_faqs_cpt',
+    'cptpress',
+    'cptpress_section_developers',
+    array(
+        'label_for' => 'cptpress_field_faqs_cpt',
+        'class' => 'cptpress_row',
+        'cptpress_custom_data' => 'custom',
+    )
+);
+
 
 }
 

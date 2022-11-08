@@ -69,6 +69,7 @@ function cptpress_custom_posts_init()
     $team_option = get_option('cptpress_options_team');
     if (!empty($team_option)) {
         register_post_type('team', $post_type_team);
+        flush_rewrite_rules();
     }
 
     /**
@@ -158,6 +159,7 @@ function cptpress_custom_posts_init()
     $portfolio_option = get_option('cptpress_options_portfolio');
     if (!empty($portfolio_option)) {
         register_post_type('portfolio', $post_type_portfolio);
+        flush_rewrite_rules();
     }
 
     /**
@@ -251,6 +253,7 @@ function cptpress_custom_posts_init()
     $case_study_option = get_option('cptpress_options_case_study');
     if (!empty($case_study_option)) {
         register_post_type('case-studies', $post_type_case_study);
+        flush_rewrite_rules();
     }
 
     /**
@@ -343,6 +346,7 @@ function cptpress_custom_posts_init()
     $clients_option = get_option('cptpress_options_clients');
     if (!empty($clients_option)) {
         register_post_type('client', $post_type_client);
+        flush_rewrite_rules();
     }
 
     /**
@@ -381,6 +385,63 @@ function cptpress_custom_posts_init()
         'show_tagcloud' => true,
     );
     register_taxonomy('client-category', array('client'), $post_type_client);
+
+// Register the "FAQs" custom post type.
+    $faqs_labels = array(
+        'name' => _x('Faq', 'Post type general name', 'cptpress'),
+        'singular_name' => _x('Faq', 'Post type singular name', 'cptpress'),
+        'menu_name' => _x('Faqs', 'Admin Menu text', 'cptpress'),
+        'name_admin_bar' => _x('Faq', 'Add New on Toolbar', 'cptpress'),
+        'add_new' => __('Add New Faq', 'cptpress'),
+        'add_new_item' => __('Add New Faqs', 'cptpress'),
+        'new_item' => __('New Faqs', 'cptpress'),
+        'edit_item' => __('Edit Faqs', 'cptpress'),
+        'view_item' => __('View Faqs', 'cptpress'),
+        'all_items' => __('All Faqs', 'cptpress'),
+        'search_items' => __('Search Faqs', 'cptpress'),
+        'parent_item_colon' => __('Parent Faqs:', 'cptpress'),
+        'not_found' => __('No Faqs found.', 'cptpress'),
+        'not_found_in_trash' => __('No Faqs found in Trash.', 'cptpress'),
+        // 'featured_image' => _x('Faq Cover Image', 'Overrides the "Featured Image", phrase for this post type. Added in 4.3', 'cptpress'),
+        // 'set_featured_image' => _x('Set Faq Image', 'Overrides the "Set featured image", phrase for this post type. Added in 4.3', 'cptpress'),
+        // 'remove_featured_image' => _x('Remove Faq image', 'Overrides the "Remove featured image" phrase for this post type. Added in 4.3', 'cptpress'),
+        // 'use_featured_image' => _x('Use as Faq image', 'Overrides the "Use as featured image" phrase for this post type. Added in 4.3', 'cptpress'),
+        'archives' => _x('Faqs archives', 'The post type archive label used in nav menus. Default "Post Archives". Added in 4.4', 'cptpress'),
+        'insert_into_item' => _x('Insert into Faq', 'Overrides the "Insert into post"/"Insert into page" phrase (used when inserting media into a post). Added in 4.4', 'cptpress'),
+        'uploaded_to_this_item' => _x('Uploaded to this Faq', 'Overrides the "Uploaded to this post"/"Uploaded to this page" phrase (used when viewing media attached to a post). Added in 4.4', 'cptpress'),
+        'filter_items_list' => _x('Filter Faqs list', 'Screen reader text for the filter links heading on the post type listing screen. Default "Filter posts list"/"Filter pages list". Added in 4.4', 'cptpress'),
+        'items_list_navigation' => _x('Faqs list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default "Posts list navigation"/"Pages list navigation". Added in 4.4', 'cptpress'),
+        'items_list' => _x('Faqs list', 'Screen reader text for the items list heading on the post type listing screen. Default "Posts list"/"Pages list". Added in 4.4', 'cptpress'),
+    );
+
+    $post_type_faqs = array(
+        'labels' => $faqs_labels,
+        'public' => true,
+        'hierarchical' => false,
+        'publicly_queryable' => true,
+        'menu_icon' => 'dashicons-info-outline',
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'query_var' => true,
+        'rewrite' => array(
+            'slug' => 'faqs',
+        ),
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'menu_position' => null,
+        'can_export' => true,
+        'show_in_rest' => false,
+        'supports' => array('title', 'editor'),
+    );
+    $faqs_option = get_option('cptpress_options_faqs');
+    if (!empty($faqs_option)) {
+        register_post_type('faqs', $post_type_faqs);
+        flush_rewrite_rules();
+    }
+
 }
 
 /**
@@ -420,7 +481,14 @@ function single_template_blog($template)
         return $template_loader->get_template_part('single', 'client', false);
     }
 
-    if (is_post_type_archive('portfolio') || is_post_type_archive('team') || is_post_type_archive('client') || is_post_type_archive('case-studies')) {
+    if (is_singular('faqs')) {
+        require_once CPT_PRESS_BASE_DIR . 'class-cpt-press-template-loader.php';
+        $template_loader = new CPT_PRESS_Template_Loader();
+
+        return $template_loader->get_template_part('single', 'faqs', false);
+    }
+
+    if (is_post_type_archive('portfolio') || is_post_type_archive('team') || is_post_type_archive('client') || is_post_type_archive('case-studies') || is_post_type_archive('faqs')) {
         require_once CPT_PRESS_BASE_DIR . 'class-cpt-press-template-loader.php';
         $template_loader = new CPT_PRESS_Template_Loader();
 

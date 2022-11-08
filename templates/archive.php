@@ -21,14 +21,14 @@ while (have_posts()):
 
     ?>
 
-						<article id="atat-<?php echo get_the_ID(); ?>" class="atat-article atat-archive">
-								<div class="atat-header">
-						            <?php if (has_post_thumbnail()): ?>
-						            <div class="atat-image">
-			<?php if ($_SERVER['REQUEST_URI'] === '/portfolio/'): ?>
-			    <?php if (!empty($cptpress_portfolio_cat)): ?>
-			    <span class="atat-cat">
-			<?php
+							<article id="atat-<?php echo get_the_ID(); ?>" class="atat-article atat-archive">
+									<div class="atat-header">
+							            <?php if (has_post_thumbnail()): ?>
+							            <div class="atat-image">
+				<?php if ($_SERVER['REQUEST_URI'] === '/portfolio/'): ?>
+				    <?php if (!empty($cptpress_portfolio_cat)): ?>
+				    <span class="atat-cat">
+				<?php
     foreach ($cptpress_portfolio_cat as $key => $value) {
 
         $cptpress_portfolio_link = get_term_link($value->slug, 'portfolio-category');
@@ -38,8 +38,8 @@ while (have_posts()):
         echo "</a>";
     }
     ?>
-			</span>
-			    <?php endif;?>
+				</span>
+				    <?php endif;?>
 
 <?php endif;?>
 
@@ -82,7 +82,7 @@ foreach ($cptpress_cs_cat as $key => $value) {
 <?php endif;?>
 
 <?php if ($_SERVER['REQUEST_URI'] === '/client/'): ?>
-<?php if(!empty($cptpress_cl_cat)): ?>
+<?php if (!empty($cptpress_cl_cat)): ?>
     <span class="atat-cat">
 <?php
 foreach ($cptpress_cl_cat as $key => $value) {
@@ -112,6 +112,14 @@ foreach ($cptpress_cl_cat as $key => $value) {
         <div class="atat-content-footer">
                 <div class="atat-excerpt" >
                     <?php the_excerpt();?>
+                </div>
+
+            </div>
+            <?php endif;?>
+        <?php if (!empty(get_the_content())): ?>
+                    <div class="atat-content-footer">
+                <div class="atat-excerpt" >
+                    <?php the_content();?>
                 </div>
 
             </div>
