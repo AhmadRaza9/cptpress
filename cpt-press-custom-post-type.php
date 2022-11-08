@@ -9,7 +9,7 @@
  * Plugin Name: CPT Press
  * Plugin URI:  https://github.com/Ahmadraza9/cptpress
  * Description: Basic Custom Post Types. Custom Post Types include  Team, Clients, Portfolios, Case Study.
- * Version: 1.2.1
+ * Version: 1.0.1
  * Author: Ahmad Raza
  * Author URI: http://ahmedraza.dev/
  * License: GPL2
