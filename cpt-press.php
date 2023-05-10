@@ -9,7 +9,7 @@
  * Plugin Name: CPT Press
  * Plugin URI:  https://github.com/Ahmadraza9/cptpress
  * Description: Basic Custom Post Types. Custom Post Types includes  Team, Portfolio, Case Study, Clients, FAQs. You can  register and unregister CPTs.
- * Version: 1.0.0
+ * Version: 1.2.0
  * Author: Ahmad Raza
  * Author URI: http://ahmedraza.dev/
  * License: GPL2
@@ -44,9 +44,9 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'cptpress'
 );
 
+//$myUpdateChecker->setBranch('main');
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
-//$myUpdateChecker->setBranch('main');
 
 function cptpress_field_team_cpt($args)
 {
