@@ -37,8 +37,7 @@ require 'cpt-press-custom-post-type.php';
 
 require 'plugin-update-checker/plugin-update-checker.php';
 
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-
+use YahnisElsts\PluginUpdateChecker\v5p0\PucFactory;
 $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'https://github.com/AhmadRaza9/cptpress/',
 	__FILE__,
