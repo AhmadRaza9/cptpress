@@ -1,4 +1,5 @@
- === CPT Press ===
+CPT Press
+=================
 
 - Author Link: https://ahmedraza.dev/
 - Requires at least: 6.1
@@ -7,7 +8,7 @@
 - License: GPLv2 or later
 - License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-=== Description ===
+### Description
 
 Basic Custom Post Types. Custom Post Types include
 - Team
