@@ -22,7 +22,7 @@ if (!defined('WPINC')) {
     die;
 }
 
-define('CPT_PRESS_VERSION', '1.0.0');
+define('CPT_PRESS_VERSION', '1.2.0');
 
 defined('CPT_PRESS_NAME') or define('CPT_PRESS_NAME', 'ataki-team');
 
