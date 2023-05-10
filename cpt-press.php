@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name: CPT Press
  * Plugin URI:  https://github.com/Ahmadraza9/cptpress
- * Description: Basic Custom Post Types. Custom Post Types includes  Team, Portfolio, Case Study, Clients, FAQs. You can  register and unregister CPTs.
+ * Description: Basic Custom Post Types. Custom Post Types includes  Team, Portfolio, Case Study, Clients, FAQs. You can  register and unregister CPTs. I am from plugin (cpt-press)
  * Version: 1.2.0
  * Author: Ahmad Raza
  * Author URI: http://ahmedraza.dev/
