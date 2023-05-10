@@ -1,5 +1,5 @@
-CPT Press
-=====================
+ === CPT Press ===
+
 - Author Link: https://ahmedraza.dev/
 - Requires at least: 6.1
 - Tested up to: 6.2
@@ -7,7 +7,7 @@ CPT Press
 - License: GPLv2 or later
 - License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-### Description
+=== Description ===
 
 Basic Custom Post Types. Custom Post Types include
 - Team
@@ -15,19 +15,19 @@ Basic Custom Post Types. Custom Post Types include
 - Portfolios,
 - Case Study
 
-### FAQ
+=== FAQ ===
 - Nothing
 
-### Changelog
+=== Changelog ===
 - Nothing
 
-### Screenshots
+=== Screenshots ===
 - Nothing
 
-### Reviews
+=== Reviews ===
 - Nothing
 
-### Installation
+=== Installation ===
 
 1. Download from git repo and upload to wordpress plugin directory
 2. Upload `cptpress-main.zip` to the `/wp-content/plugins/` directory
