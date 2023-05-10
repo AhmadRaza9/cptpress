@@ -44,8 +44,8 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'cptpress'
 );
 
-//$myUpdateChecker->setBranch('main');
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+$myUpdateChecker->setBranch('main');
+//$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
 
 function cptpress_field_team_cpt($args)
