@@ -45,8 +45,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 	'cptpress'
 );
 
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
+$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
 
 function cptpress_field_team_cpt($args)
