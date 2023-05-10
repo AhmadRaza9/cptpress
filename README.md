@@ -1,7 +1,7 @@
 - Author Link: https://ahmedraza.dev/
-- Requires at least: 1.0.0
-- Tested up to: 1.0.0
-- Stable tag: 1.0.0
+- Requires at least: 6.1
+- Tested up to: 6.2
+- Requires PHP: 7.6
 - License: GPLv2 or later
 - License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
