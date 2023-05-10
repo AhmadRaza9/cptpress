@@ -14,20 +14,20 @@ Basic Custom Post Types. Custom Post Types include
 - Portfolios,
 - Case Study
 
-== FAQ ==
-- Nothing
+== Frequently Asked Questions ==
+= A question that someone might have =
+
+An answer to that question.
+
+= What about foo bar? =
+
+Answer to foo bar dilemma.
 
 == Changelog ==
-- Nothing
+= 1.0.0 =
+* Adding some new CPTs
 
-== Screenshots ==
-- Nothing
+== Upgrade Notice ==
 
-== Reviews ==
-- Nothing
-
-== Installation ==
-
-1. Download from git repo and upload to wordpress plugin directory
-2. Upload `cptpress-main.zip` to the `/wp-content/plugins/` directory
-3. Activate the plugin through the 'Plugins' menu in WordPress
+= 1.2.0 =
+* We will add more CPTs
