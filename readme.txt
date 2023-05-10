@@ -15,13 +15,7 @@ Basic Custom Post Types. Custom Post Types include
 - Case Study
 
 == Frequently Asked Questions ==
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+= There are no questions =
 
 == Changelog ==
 = 1.0.0 =
@@ -31,3 +25,9 @@ Answer to foo bar dilemma.
 
 = 1.2.0 =
 * We will add more CPTs
+
+== Installation ==
+
+1. Download from git repo and upload to wordpress plugin directory
+2. Upload `cptpress-main.zip` to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
