@@ -18,6 +18,9 @@ Basic Custom Post Types. Custom Post Types include
 = There are no questions =
 
 == Changelog ==
+= 1.3.0 =
+* Update plugin update checker
+
 = 1.2.0 =
 * Plugin update checker added
 
