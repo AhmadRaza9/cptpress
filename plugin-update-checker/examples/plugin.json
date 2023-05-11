@@ -1,0 +1,37 @@
+{
+	"name": "CPT Press",
+	"version": "1.3.0",
+	"download_url": "https://github.com/AhmadRaza9/cptpress/releases/download/v1.3.0/cptpress.zip",
+
+	"homepage": "https://github.com/AhmadRaza9/cptpress",
+	"requires": "1.2.0",
+	"tested": "1.0.0",
+	"last_updated": "2023-05-10 16:17:00",
+	"upgrade_notice": "Here's why you should upgrade...",
+
+	"author": "Ahmad Raza",
+	"author_homepage": "http://ahmedraza.dev/",
+
+	"sections": {
+		"description": "Basic Custom Post Types. Custom Post Types includes  Team, Portfolio, Case Study, Clients, FAQs. You can  register and unregister CPTs.",
+		"installation": "Download from git repo and upload to wordpress plugin directory",
+		"changelog": "(Recommended) Changelog. <p>Plugin update checker added.</p>",
+		"custom_section": "This is a custom section labeled 'Custom Section'."
+	},
+	
+	"icons" : {
+		"1x" : "http://w-shadow.com/files/external-update-example/assets/icon-128x128.png",
+		"2x" : "http://w-shadow.com/files/external-update-example/assets/icon-256x256.png"
+    },
+
+	"banners": {
+		"low": "http://w-shadow.com/files/external-update-example/assets/banner-772x250.png",
+		"high": "http://w-shadow.com/files/external-update-example/assets/banner-1544x500.png"
+	},
+
+	"rating": 0,
+	"num_ratings": 0,
+
+	"downloaded": 5,
+	"active_installs": 2
+}

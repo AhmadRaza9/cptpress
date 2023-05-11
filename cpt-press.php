@@ -38,14 +38,16 @@ require 'cpt-press-custom-post-type.php';
 require 'plugin-update-checker/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-$myUpdateChecker = PucFactory::buildUpdateChecker(
+$UpdateChecker = PucFactory::buildUpdateChecker(
 	'https://github.com/AhmadRaza9/cptpress/',
 	__FILE__,
 	'cptpress'
 );
 
-$myUpdateChecker->setBranch('main');
-//$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+
+//$UpdateChecker->setBranch('main');
+$UpdateChecker->getVcsApi()->enableReleaseAssets();
+
 
 
 function cptpress_field_team_cpt($args)
