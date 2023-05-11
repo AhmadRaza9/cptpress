@@ -2,7 +2,6 @@
 
 
 
-		<?php if (have_posts()): ?>
 <div class="atat-page-main">
 			<div class="atat-page-header">
 				<?php
@@ -12,6 +11,7 @@ the_archive_title('<h1 class="page-title">', '</h1>');
 <div class="ata-cards" id="ata-main-sec">
             <?php
 // Start the loop.
+            if (have_posts()):
 while (have_posts()):
     the_post();
     $cptpress_portfolio_cat = get_the_terms($post->ID, 'portfolio-category');
